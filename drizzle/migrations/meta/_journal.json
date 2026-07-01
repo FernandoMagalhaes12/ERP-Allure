@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1781278602869,
+      "tag": "0000_demonic_kabuki",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1781619800000,
+      "tag": "0001_allure_label_settings",
+      "breakpoints": true
+    }
+  ]
+}

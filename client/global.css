@@ -1,0 +1,194 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 339 65% 7%;
+    --foreground: 0 0% 100%;
+
+    --card: 339 52% 11%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 339 52% 11%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 44 66% 60%;
+    --primary-foreground: 339 65% 7%;
+
+    --secondary: 339 36% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 339 36% 18%;
+    --muted-foreground: 330 18% 76%;
+
+    --accent: 44 66% 60%;
+    --accent-foreground: 339 65% 7%;
+
+    --destructive: 352 84% 62%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 339 42% 24%;
+    --input: 339 42% 24%;
+    --ring: 44 66% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 339 65% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 44 66% 60%;
+    --sidebar-primary-foreground: 339 65% 7%;
+    --sidebar-accent: 339 36% 18%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 339 42% 24%;
+    --sidebar-ring: 44 66% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply text-white;
+    background:
+      radial-gradient(circle at top, rgba(127, 17, 51, 0.22), transparent 24%),
+      linear-gradient(180deg, #15050b 0%, #110309 100%);
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  select {
+    background-position: right 0.9rem center !important;
+    padding-right: 2.75rem !important;
+  }
+
+  :where(input, select, textarea) {
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  }
+
+  :where(input, select, textarea):focus {
+    outline: none;
+    border-color: rgba(239, 207, 114, 0.34);
+    box-shadow: 0 0 0 3px rgba(239, 207, 114, 0.08);
+  }
+
+  :where(table) {
+    border-collapse: collapse;
+  }
+
+  :where(th) {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  :where(td) {
+    font-size: 13px;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply rounded-xl px-4 py-2.5 font-semibold transition-all;
+    background: linear-gradient(180deg, #ecd27d 0%, #c89c3d 100%);
+    color: #24040d;
+    box-shadow: 0 10px 24px rgba(200, 156, 61, 0.16);
+  }
+
+  .btn-gold:hover {
+    background: linear-gradient(180deg, #f1d987 0%, #d3a84a 100%);
+    transform: translateY(-1px);
+  }
+
+  .btn-gold-sm {
+    @apply rounded-lg px-3 py-2 text-sm font-semibold transition-all;
+    background: linear-gradient(180deg, #ecd27d 0%, #c89c3d 100%);
+    color: #24040d;
+  }
+
+  .surface-soft {
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(10px);
+  }
+
+  .card-dark {
+    @apply rounded-2xl p-4 md:p-5;
+    background: linear-gradient(180deg, rgba(58, 12, 25, 0.92) 0%, rgba(28, 5, 12, 0.96) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.18);
+  }
+
+  .panel-dark {
+    @apply rounded-2xl border px-4 py-3;
+    background: rgba(255, 255, 255, 0.025);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .text-success {
+    @apply text-[#4ade80];
+  }
+
+  .text-error {
+    @apply text-[#fb7185];
+  }
+
+  .text-warning {
+    @apply text-[#facc15];
+  }
+
+  .bg-success-light {
+    @apply bg-[#4ade80]/10;
+  }
+
+  .bg-error-light {
+    @apply bg-[#fb7185]/10;
+  }
+
+  .bg-warning-light {
+    @apply bg-[#facc15]/10;
+  }
+}
